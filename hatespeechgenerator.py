@@ -26,7 +26,7 @@ from sklearn.linear_model import LogisticRegression
 zip_filename = list(uploaded.keys())[0]
 zip_content = uploaded[zip_filename]
 
-with zipfile.ZipFile(io.BytesIO(zip_content), 'r') as zf:
+with zipfile.ZipFile(io.BytesIO(zip_content), 'r') as zf:    #to convert into ZIP
   csv_filename = 'labeled_data.csv'
   with zf.open(csv_filename) as f:
     df = pd.read_csv(f)
